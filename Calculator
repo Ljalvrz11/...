@@ -1,0 +1,53 @@
+<?php
+class Calculator {
+    public function addition ($int1, $int2) {
+        return $int1 + $int2;
+    }
+    public function subtraction ($int1, $int2) {
+        return $int1 - $int2;
+    }
+    public function multiplication ($int1, $int2) {
+        return $int1 * $int2;
+    }
+    public function division ($int1, $int2) {
+        return $int1 / $int2;
+    }
+    public function modulus($int1, $int2) {
+        return $int1 % $int2;
+    }
+}
+
+$calc = new Calculator();
+
+echo "Enter the first number: ";
+$int1 = (int)trim(fgets(STDIN));
+
+echo "Enter the second number: ";
+$int2 = (int)trim(fgets(STDIN));
+
+echo "Enter operation: ";
+$operation = trim(fgets(STDIN));
+
+switch ($operation) {
+    case '+':
+        $result = $calc->addition ($int1, $int2);
+        break;
+    case '-':
+        $result = $calc->subtraction ($int1, $int2);
+        break;
+    case '*':
+        $result = $calc->multiplication ($int1, $int2);
+        break;
+    case '/':
+        $result = $calc->division ($int1, $int2);
+        break;
+    case '%':
+        $result = $calc->modulus($int1, $int2);
+        break;
+    default:
+        $result = 'Invalid operation';
+        break;
+}
+
+echo "Result: " . $result . PHP_EOL;
+?>
